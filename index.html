@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>為同事得救禱告｜同心守望，把愛帶進職場</title>
+  
+  <!-- Google Fonts: Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FDF8F3',
+            creamDark: '#F5EDE4',
+            terracotta: '#E88D67',
+            terracottaHover: '#D97B54',
+            golden: '#F3B95F',
+            sage: '#7A9D54',
+            sageLight: '#EBF2E4',
+            cocoa: '#4A3B32',
+            cocoaLight: '#7D6B60',
+          },
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+          },
+          boxShadow: {
+            warm: '0 8px 24px -4px rgba(74, 59, 50, 0.08)',
+            warmSm: '0 4px 12px -2px rgba(74, 59, 50, 0.06)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FDF8F3;
+      color: #4A3B32;
+      font-family: 'Noto Sans TC', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 溫馨卡片過渡動畫 */
+    .prayer-card {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    }
+    .prayer-card:active {
+      transform: scale(0.99);
+    }
+
+    /* 禱告愛心與光暈動畫 */
+    @keyframes pulseGentle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+    .animate-pray {
+      animation: pulseGentle 0.45s ease-in-out;
+    }
+
+    /* 隱藏卷軸但保留滑動功能 */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-24 selection:bg-terracotta selection:text-white">
+
+  <!-- 頂部溫馨歡迎區 (Hero Header) -->
+  <header class="relative overflow-hidden bg-gradient-to-b from-[#FBECE0] to-[#FDF8F3] pt-7 pb-6 px-5 rounded-b-[32px] shadow-warmSm">
+    <!-- 裝飾性暖光圓圈 -->
+    <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-golden/20 blur-2xl pointer-events-none"></div>
+    <div class="absolute top-16 -left-10 w-32 h-32 rounded-full bg-terracotta/15 blur-xl pointer-events-none"></div>
+
+    <div class="max-w-lg mx-auto relative z-10">
+      <!-- 頂部小標籤與分享按鈕 -->
+      <div class="flex items-center justify-between mb-4">
+        <div class="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-terracotta shadow-sm">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>
+          <span>職場福音守望家</span>
+        </div>
+        <button id="shareLineBtn" type="button" class="inline-flex items-center gap-1.5 bg-[#06C755] hover:bg-[#05b34c] active:scale-95 transition text-white text-xs font-bold px-3.5 py-2 rounded-full shadow-sm">
+          <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+          <span>複製 LINE 邀請</span>
+        </button>
+      </div>
+
+      <!-- 主標題 -->
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-12 h-12 rounded-2xl bg-terracotta text-white flex items-center justify-center shadow-warmSm shrink-0">
+          <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-cocoa">為同事得救禱告</h1>
+          <p class="text-sm text-cocoaLight font-medium">同心合意代禱，把家的溫暖帶進職場</p>
+        </div>
+      </div>
+
+      <!-- 主題經節卡片 (恢復本聖經 提前二3~4) -->
+      <div class="mt-4 bg-white/80 backdrop-blur-sm border border-white rounded-2xl p-3.5 shadow-warmSm">
+        <div class="flex items-center justify-between mb-1">
+          <span class="inline-flex items-center gap-1 text-[11px] font-bold text-terracotta">
+            <i data-lucide="book-open" class="w-3 h-3"></i>
+            <span>福音負擔經節</span>
+          </span>
+          <span class="text-[11px] font-medium text-cocoaLight">恢復本聖經</span>
+        </div>
+        <p class="text-xs sm:text-sm text-cocoa leading-relaxed">
+          「因為這在我們的救主神面前，是美好且可蒙悅納的。祂願意萬人得救，並且完全認識真理。」<span class="text-terracotta font-bold">— 提前二3～4</span>
+        </p>
+      </div>
+
+      <!-- 統計小看板 -->
+      <div class="grid grid-cols-2 gap-3 mt-4">
+        <div class="bg-white rounded-2xl p-3 flex items-center gap-3 shadow-warmSm">
+          <div class="w-9 h-9 rounded-xl bg-golden/20 text-[#C88A2B] flex items-center justify-center shrink-0">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[11px] text-cocoaLight">守望名單</div>
+            <div class="text-lg font-bold text-cocoa leading-tight"><span id="totalColleagues">0</span> <span class="text-xs font-normal">位同事</span></div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-3 flex items-center gap-3 shadow-warmSm">
+          <div class="w-9 h-9 rounded-xl bg-sageLight text-sage flex items-center justify-center shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[11px] text-cocoaLight">累計同心禱告</div>
+            <div class="text-lg font-bold text-sage leading-tight"><span id="totalPrayers">0</span> <span class="text-xs font-normal">次阿們</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區塊 -->
+  <main class="max-w-lg mx-auto px-4 mt-5 space-y-6">
+
+    <!-- 可切換《恢復本聖經》代禱負擔與應許經節庫 -->
+    <section class="bg-gradient-to-br from-[#FFF9F2] to-[#F6EFE6] rounded-[22px] p-4 shadow-warmSm border border-[#EFE2D3] relative overflow-hidden">
+      <div class="flex items-center justify-between mb-2">
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-sage">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>代禱應許與負擔經節（恢復本）</span>
+        </div>
+        <button id="nextVerseBtn" type="button"
+          class="inline-flex items-center gap-1 text-[11px] font-bold text-terracotta hover:text-terracottaHover bg-white/90 hover:bg-white px-2.5 py-1 rounded-full shadow-2xs border border-[#F2E6DA] active:scale-95 transition">
+          <i data-lucide="refresh-cw" class="w-3 h-3"></i>
+          <span>換一處經節</span>
+        </button>
+      </div>
+
+      <div id="verseDisplayBox" class="transition-opacity duration-200">
+        <p id="encouragementVerseText" class="text-xs sm:text-sm text-cocoa leading-relaxed font-medium">
+          「當信靠主耶穌，你和你一家都必得救。」
+        </p>
+        <div class="mt-2 flex items-center justify-between">
+          <span id="encouragementVerseRef" class="text-xs font-bold text-terracotta">— 徒十六31</span>
+          <div id="verseDots" class="flex items-center gap-1.5">
+            <!-- 動態產生經節指示點 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. 新增代禱對象區塊 (可收合/預設展開) -->
+    <section class="bg-white rounded-[22px] p-5 shadow-warm border border-[#F2E6DA]">
+      <div class="flex items-center justify-between mb-3.5">
+        <h2 class="text-base font-bold text-cocoa flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-terracotta inline-block"></span>
+          寫下你想為哪位同事禱告
+        </h2>
+        <button id="toggleFormBtn" type="button" class="text-xs text-cocoaLight hover:text-terracotta font-medium flex items-center gap-1 py-1 px-2 rounded-lg bg-cream">
+          <span id="toggleFormText">收合表單</span>
+          <i id="toggleFormIcon" data-lucide="chevron-up" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+      <form id="addPrayerForm" class="space-y-3.5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <!-- 被代禱者姓名 / 暱稱 -->
+          <div>
+            <label for="colleagueName" class="block text-xs font-bold text-cocoa mb-1">
+              同事姓名 / 暱稱 <span class="text-terracotta">*</span>
+            </label>
+            <div class="relative">
+              <i data-lucide="user" class="w-4 h-4 text-cocoaLight/70 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input type="text" id="colleagueName" required placeholder="例：小美 / 王小姐"
+                class="w-full pl-9 pr-3.5 py-2.5 bg-cream border border-[#EAE0D5] rounded-xl text-sm text-cocoa placeholder:text-cocoaLight/50 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition" />
+            </div>
+          </div>
+
+          <!-- 工作地點 / 單位 -->
+          <div>
+            <label for="workplace" class="block text-xs font-bold text-cocoa mb-1">
+              工作地點 / 部門 <span class="text-terracotta">*</span>
+            </label>
+            <div class="relative">
+              <i data-lucide="map-pin" class="w-4 h-4 text-terracotta absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input type="text" id="workplace" required placeholder="例：台北信義區 / 財務部"
+                class="w-full pl-9 pr-3.5 py-2.5 bg-cream border border-[#EAE0D5] rounded-xl text-sm text-cocoa placeholder:text-cocoaLight/50 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 代禱事項 / 備註 -->
+        <div>
+          <label for="prayerNote" class="block text-xs font-bold text-cocoa mb-1">
+            牧養與福音負擔 <span class="text-cocoaLight font-normal">(選填)</span>
+          </label>
+          <textarea id="prayerNote" rows="2" placeholder="例：最近工作壓力大，求主賜下平安，也希望有機會邀請她參加福音茶會或小排聚會！"
+            class="w-full px-3.5 py-2.5 bg-cream border border-[#EAE0D5] rounded-xl text-sm text-cocoa placeholder:text-cocoaLight/50 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition resize-none"></textarea>
+        </div>
+
+        <!-- 發起人 (選填) -->
+        <div>
+          <label for="submittedBy" class="block text-xs font-bold text-cocoa mb-1">
+            代禱發起人 <span class="text-cocoaLight font-normal">(選填，留白顯示為「愛心家人」)</span>
+          </label>
+          <input type="text" id="submittedBy" placeholder="例：以琳 / 你的名字"
+            class="w-full px-3.5 py-2 bg-cream border border-[#EAE0D5] rounded-xl text-sm text-cocoa placeholder:text-cocoaLight/50 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition" />
+        </div>
+
+        <!-- 送出按鈕 -->
+        <button type="submit" id="submitBtn"
+          class="w-full py-3 px-4 bg-terracotta hover:bg-terracottaHover active:scale-[0.98] text-white font-bold text-sm rounded-xl shadow-warmSm transition flex items-center justify-center gap-2">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>加入代禱名單</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- 2. 搜尋與篩選列 -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between">
+        <h2 class="text-base font-bold text-cocoa flex items-center gap-2">
+          <i data-lucide="flame" class="w-4 h-4 text-terracotta"></i>
+          <span>大家正在守望的同事</span>
+        </h2>
+        <span id="syncStatus" class="text-[11px] text-cocoaLight flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-sage animate-pulse"></span>
+          雲端同步中
+        </span>
+      </div>
+
+      <!-- 搜尋框 -->
+      <div class="relative">
+        <i data-lucide="search" class="w-4 h-4 text-cocoaLight absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+        <input type="text" id="searchInput" placeholder="搜尋同事名字、公司地點或部門..."
+          class="w-full pl-10 pr-9 py-2.5 bg-white border border-[#EAE0D5] rounded-2xl text-sm text-cocoa placeholder:text-cocoaLight/60 shadow-warmSm focus:outline-none focus:border-terracotta transition" />
+        <button id="clearSearchBtn" type="button" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-cocoaLight hover:text-cocoa p-1">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- 快捷地點標籤篩選 -->
+      <div id="locationTags" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+        <!-- 動態產生篩選標籤 -->
+      </div>
+    </section>
+
+    <!-- 3. 代禱名單卡片牆 -->
+    <section id="prayerListContainer" class="space-y-3.5">
+      <!-- 載入中骨架屏 -->
+      <div id="loadingSkeleton" class="space-y-3">
+        <div class="bg-white rounded-[20px] p-5 shadow-warmSm animate-pulse space-y-3">
+          <div class="h-5 bg-creamDark rounded w-1/3"></div>
+          <div class="h-4 bg-creamDark rounded w-1/2"></div>
+          <div class="h-12 bg-cream rounded-xl w-full"></div>
+        </div>
+        <div class="bg-white rounded-[20px] p-5 shadow-warmSm animate-pulse space-y-3">
+          <div class="h-5 bg-creamDark rounded w-1/4"></div>
+          <div class="h-4 bg-creamDark rounded w-2/5"></div>
+          <div class="h-12 bg-cream rounded-xl w-full"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 底部懸浮分享列 (方便單手操作) -->
+  <div class="fixed bottom-4 left-0 right-0 px-4 z-30 pointer-events-none">
+    <div class="max-w-lg mx-auto flex justify-end">
+      <button id="scrollToTopBtn" type="button" aria-label="回到頂部新增"
+        class="pointer-events-auto bg-cocoa/90 hover:bg-cocoa text-white p-3.5 rounded-full shadow-warm backdrop-blur-sm transition active:scale-90 flex items-center gap-2 text-xs font-bold">
+        <i data-lucide="pen-line" class="w-4 h-4 text-golden"></i>
+        <span>新增代禱</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 自訂溫馨通知 Toast -->
+  <div id="toastContainer" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm pointer-events-none flex flex-col gap-2"></div>
+
+  <!-- 自訂刪除確認 Modal (不使用原生 confirm/alert) -->
+  <div id="deleteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-cocoa/40 backdrop-blur-xs px-4">
+    <div class="bg-white rounded-[24px] p-6 max-w-sm w-full shadow-warm border border-[#F2E6DA] transform transition-all">
+      <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-3 mx-auto">
+        <i data-lucide="trash-2" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-lg font-bold text-center text-cocoa mb-1">移除這筆代禱名單？</h3>
+      <p id="deleteModalDesc" class="text-xs text-center text-cocoaLight mb-5 leading-relaxed">
+        確定要從代禱牆移除這位同事嗎？若他已經決志信主，歡迎先在群組報好消息喔！
+      </p>
+      <div class="grid grid-cols-2 gap-3">
+        <button id="cancelDeleteBtn" type="button" class="py-2.5 px-4 rounded-xl bg-cream hover:bg-creamDark text-cocoa font-bold text-sm transition">
+          先保留
+        </button>
+        <button id="confirmDeleteBtn" type="button" class="py-2.5 px-4 rounded-xl bg-terracotta hover:bg-terracottaHover text-white font-bold text-sm transition">
+          確認移除
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs & 應用程式邏輯 -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, onSnapshot, getDocs, increment, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // 初始化 Lucide 圖示
+    lucide.createIcons();
+
+    // 全域狀態管理
+    let db = null;
+    let auth = null;
+    let currentUser = null;
+    let allPrayers = [];
+    let selectedLocationFilter = '全部';
+    let searchQuery = '';
+    let itemToDeleteId = null;
+    const prayedSessionSet = new Set(); // 記錄本次開啟頁面已按過禱告的 ID，避免連續誤觸，但仍允許心意更新
+
+    // 《恢復本聖經》代禱負擔與應許經節庫
+    const recoveryVerses = [
+      {
+        text: '「當信靠主耶穌，你和你一家都必得救。」',
+        ref: '徒十六31'
+      },
+      {
+        text: '「神的恩典，就是那帶給萬人救恩的，已經顯現出來，」',
+        ref: '多二11'
+      },
+      {
+        text: '「因為凡呼求主名的，就必得救。」',
+        ref: '羅十13'
+      },
+      {
+        text: '「神愛世人，甚至將祂的獨生子賜給他們，叫一切信入祂的，不至滅亡，反得永遠的生命。」',
+        ref: '約三16'
+      },
+      {
+        text: '「我們所傳的，不是自己，乃是基督耶穌為主，也作你們的奴僕，因耶穌的緣故作你們的奴僕。因為那說光要從黑暗裏照出來的神，已經照在我們心裏，為著光照人，使人認識那顯在耶穌基督面上之神的榮耀。」',
+        ref: '林後四5～6'
+      },
+      {
+        text: '「並且叫他們得開眼睛，從黑暗轉入光中，從撒但權下轉向神，又因信入我，得蒙赦罪，並在一切聖別的人中得著基業。」',
+        ref: '徒二六18'
+      }
+    ];
+    let currentVerseIndex = 0;
+
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'colleague-salvation-prayer';
+
+    // DOM 元素參考
+    const prayerListContainer = document.getElementById('prayerListContainer');
+    const loadingSkeleton = document.getElementById('loadingSkeleton');
+    const totalColleaguesEl = document.getElementById('totalColleagues');
+    const totalPrayersEl = document.getElementById('totalPrayers');
+    const locationTagsEl = document.getElementById('locationTags');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const addPrayerForm = document.getElementById('addPrayerForm');
+    const syncStatusEl = document.getElementById('syncStatus');
+
+    // 初始化與切換《恢復本聖經》代禱經節
+    function renderEncouragementVerse(index) {
+      const verseTextEl = document.getElementById('encouragementVerseText');
+      const verseRefEl = document.getElementById('encouragementVerseRef');
+      const verseDotsEl = document.getElementById('verseDots');
+      const verseBox = document.getElementById('verseDisplayBox');
+
+      if (!verseTextEl || !verseRefEl || !verseDotsEl) return;
+
+      const item = recoveryVerses[index % recoveryVerses.length];
+      verseBox.style.opacity = '0.35';
+
+      setTimeout(() => {
+        verseTextEl.textContent = item.text;
+        verseRefEl.textContent = `— ${item.ref}（恢復本）`;
+        verseBox.style.opacity = '1';
+      }, 120);
+
+      verseDotsEl.innerHTML = '';
+      recoveryVerses.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.ariaLabel = `切換至第 ${idx + 1} 處經節`;
+        dot.className = idx === index
+          ? 'w-4 h-1.5 rounded-full bg-terracotta transition-all'
+          : 'w-1.5 h-1.5 rounded-full bg-cocoaLight/30 hover:bg-cocoaLight/60 transition-all';
+        dot.addEventListener('click', () => {
+          currentVerseIndex = idx;
+          renderEncouragementVerse(currentVerseIndex);
+        });
+        verseDotsEl.appendChild(dot);
+      });
+    }
+
+    document.getElementById('nextVerseBtn').addEventListener('click', () => {
+      currentVerseIndex = (currentVerseIndex + 1) % recoveryVerses.length;
+      renderEncouragementVerse(currentVerseIndex);
+    });
+
+    // 顯示溫馨提示 Toast
+    function showToast(message, type = 'success') {
+      const toastContainer = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      const bgClass = type === 'success' ? 'bg-cocoa text-white' : 'bg-terracotta text-white';
+      const iconName = type === 'success' ? 'heart' : 'info';
+
+      toast.className = `${bgClass} px-4 py-3 rounded-2xl shadow-warm flex items-center gap-2.5 text-xs font-medium transition-all duration-300 opacity-0 -translate-y-2`;
+      toast.innerHTML = `
+        <i data-lucide="${iconName}" class="w-4 h-4 text-golden shrink-0"></i>
+        <span>${escapeHTML(message)}</span>
+      `;
+      toastContainer.appendChild(toast);
+      lucide.createIcons({ root: toast });
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('opacity-0', '-translate-y-2');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // XSS 防護字串轉義
+    function escapeHTML(str) {
+      if (!str) return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // 格式化時間顯示
+    function formatTimeAgo(timestamp) {
+      if (!timestamp) return '剛剛加入';
+      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+      const diffSec = Math.floor((Date.now() - date.getTime()) / 1000);
+      if (diffSec < 60) return '剛剛';
+      if (diffSec < 3600) return `${Math.floor(diffSec / 60)} 分鐘前`;
+      if (diffSec < 86400) return `${Math.floor(diffSec / 3600)} 小時前`;
+      return `${date.getMonth() + 1}/${date.getDate()}`;
+    }
+
+    // 初始化 Firebase 與驗證 (嚴格遵守 Rule 1, 2, 3)
+    async function initFirebase() {
+      try {
+        if (typeof __firebase_config === 'undefined') {
+          throw new Error('Firebase config not found');
+        }
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getFirestore(app);
+
+        // Rule 3: 先完成登入再執行 Firestore 操作
+        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+          await signInWithCustomToken(auth, __initial_auth_token);
+        } else {
+          await signInAnonymously(auth);
+        }
+
+        currentUser = auth.currentUser;
+        if (!currentUser) return;
+
+        syncStatusEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-sage"></span> 已連線・大家同步可見`;
+
+        // 檢查是否需要建立預設溫馨範例資料
+        await seedInitialDataIfEmpty();
+
+        // 監聽公開代禱資料集合 (Rule 1: /artifacts/{appId}/public/data/colleague_prayers)
+        const prayersRef = collection(db, 'artifacts', appId, 'public', 'data', 'colleague_prayers');
+        
+        // Rule 2: 不使用複雜 orderBy/where，全部撈取後於記憶體排序
+        onSnapshot(prayersRef, (snapshot) => {
+          const items = [];
+          snapshot.forEach((docSnap) => {
+            items.push({ id: docSnap.id, ...docSnap.data() });
+          });
+
+          // 依建立時間新到舊排序
+          items.sort((a, b) => {
+            const timeA = a.createdAt?.toMillis ? a.createdAt.toMillis() : (a.localTime || 0);
+            const timeB = b.createdAt?.toMillis ? b.createdAt.toMillis() : (b.localTime || 0);
+            return timeB - timeA;
+          });
+
+          allPrayers = items;
+          updateStatsAndTags();
+          renderPrayerCards();
+        }, (error) => {
+          console.error('Firestore listener error:', error);
+          syncStatusEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-terracotta"></span> 連線稍有延遲`;
+        });
+
+      } catch (err) {
+        console.error('Firebase init error:', err);
+        syncStatusEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-golden"></span> 單機預覽模式`;
+        // 若環境無 Firebase 設定，提供本地示範資料確保畫面完美運作
+        loadFallbackDemoData();
+      }
+    }
+
+    // 首次開啟若資料庫全空，自動建立 3 筆溫馨示範名單
+    async function seedInitialDataIfEmpty() {
+      if (!currentUser || !db) return;
+      const prayersRef = collection(db, 'artifacts', appId, 'public', 'data', 'colleague_prayers');
+      const snap = await getDocs(prayersRef);
+      if (snap.empty) {
+        const samples = [
+          {
+            name: '陳小美 (May)',
+            workplace: '台北信義區・行銷企劃部',
+            note: '最近專案加班很辛苦，為她的身心靈平安禱告，盼望這週午餐能順利約她聊聊、邀請她參加週末的福音茶會！',
+            submittedBy: '怡君',
+            prayerCount: 8,
+            createdAt: serverTimestamp(),
+            localTime: Date.now() - 1000 * 60 * 45
+          },
+          {
+            name: '林志明 經理',
+            workplace: '新竹科學園區・研發三處',
+            note: '人很客氣但對信仰比較理性，求神開啟他的心眼，在家庭與工作壓力中經歷從神而來的真平安。',
+            submittedBy: '大衛',
+            prayerCount: 14,
+            createdAt: serverTimestamp(),
+            localTime: Date.now() - 1000 * 60 * 180
+          },
+          {
+            name: '佳穎 (新進同仁)',
+            workplace: '台中西屯區・客戶服務組',
+            note: '剛搬來台中工作還在適應新環境，求主為她預備溫暖的職場夥伴，讓她感受到像家一樣的接納。',
+            submittedBy: '愛心家人',
+            prayerCount: 5,
+            createdAt: serverTimestamp(),
+            localTime: Date.now() - 1000 * 60 * 360
+          }
+        ];
+        for (const item of samples) {
+          await addDoc(prayersRef, item);
+        }
+      }
+    }
+
+    function loadFallbackDemoData() {
+      allPrayers = [
+        {
+          id: 'demo-1',
+          name: '陳小美 (May)',
+          workplace: '台北信義區・行銷企劃部',
+          note: '最近專案加班很辛苦，為她的身心靈平安禱告，盼望這週午餐能順利約她聊聊！',
+          submittedBy: '怡君',
+          prayerCount: 8,
+          localTime: Date.now() - 1000 * 60 * 30
+        },
+        {
+          id: 'demo-2',
+          name: '林志明 經理',
+          workplace: '新竹科學園區・研發三處',
+          note: '求神開啟他的心眼，在家庭與工作壓力中經歷從神而來的真平安。',
+          submittedBy: '大衛',
+          prayerCount: 14,
+          localTime: Date.now() - 1000 * 60 * 120
+        }
+      ];
+      updateStatsAndTags();
+      renderPrayerCards();
+    }
+
+    // 更新統計數據與地點快捷標籤
+    function updateStatsAndTags() {
+      totalColleaguesEl.textContent = allPrayers.length;
+      const sumPrayers = allPrayers.reduce((acc, item) => acc + (Number(item.prayerCount) || 0), 0);
+      totalPrayersEl.textContent = sumPrayers;
+
+      // 提取不重複的工作地點關鍵字 (取「・」或空格前的地區/單位)
+      const locations = new Set(['全部']);
+      allPrayers.forEach(item => {
+        if (item.workplace) {
+          const shortLoc = item.workplace.split(/[・\s/／-]/)[0].trim();
+          if (shortLoc) locations.add(shortLoc);
+        }
+      });
+
+      if (!locations.has(selectedLocationFilter)) {
+        selectedLocationFilter = '全部';
+      }
+
+      locationTagsEl.innerHTML = '';
+      locations.forEach(loc => {
+        const isActive = loc === selectedLocationFilter;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = isActive
+          ? 'shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-cocoa text-white shadow-warmSm transition'
+          : 'shrink-0 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white text-cocoaLight hover:text-cocoa border border-[#EAE0D5] transition';
+        btn.textContent = loc === '全部' ? `全部 (${allPrayers.length})` : `📍 ${loc}`;
+        btn.addEventListener('click', () => {
+          selectedLocationFilter = loc;
+          updateStatsAndTags();
+          renderPrayerCards();
+        });
+        locationTagsEl.appendChild(btn);
+      });
+    }
+
+    // 渲染代禱名單卡片
+    function renderPrayerCards() {
+      if (loadingSkeleton) loadingSkeleton.remove();
+
+      const filtered = allPrayers.filter(item => {
+        const matchLoc = selectedLocationFilter === '全部' || (item.workplace && item.workplace.includes(selectedLocationFilter));
+        const q = searchQuery.toLowerCase().trim();
+        const matchQuery = !q ||
+          (item.name && item.name.toLowerCase().includes(q)) ||
+          (item.workplace && item.workplace.toLowerCase().includes(q)) ||
+          (item.note && item.note.toLowerCase().includes(q)) ||
+          (item.submittedBy && item.submittedBy.toLowerCase().includes(q));
+        return matchLoc && matchQuery;
+      });
+
+      prayerListContainer.innerHTML = '';
+
+      if (filtered.length === 0) {
+        prayerListContainer.innerHTML = `
+          <div class="bg-white/80 rounded-[22px] p-8 text-center border border-dashed border-[#DFD3C6]">
+            <div class="w-12 h-12 rounded-2xl bg-cream text-terracotta flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="sprout" class="w-6 h-6"></i>
+            </div>
+            <p class="text-sm font-bold text-cocoa mb-1">目前沒有符合的代禱名單</p>
+            <p class="text-xs text-cocoaLight">試試看清除搜尋條件，或直接在上方新增一位同事吧！</p>
+          </div>
+        `;
+        lucide.createIcons({ root: prayerListContainer });
+        return;
+      }
+
+      filtered.forEach(item => {
+        const hasPrayed = prayedSessionSet.has(item.id);
+        const count = Number(item.prayerCount) || 0;
+        const card = document.createElement('article');
+        card.className = 'prayer-card bg-white rounded-[20px] p-5 shadow-warm border border-[#F2E6DA] relative';
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-2 mb-2.5">
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-lg font-bold text-cocoa tracking-tight">${escapeHTML(item.name)}</h3>
+                <span class="text-[11px] text-cocoaLight/80 bg-cream px-2 py-0.5 rounded-md">
+                  ${formatTimeAgo(item.createdAt || item.localTime)}
+                </span>
+              </div>
+              
+              <!-- 醒目的工作地點標籤 -->
+              <div class="mt-1.5 inline-flex items-center gap-1.5 bg-[#FFF4EC] text-[#C8643B] border border-[#FADCCB] px-3 py-1 rounded-xl text-xs font-bold">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 text-terracotta"></i>
+                <span>${escapeHTML(item.workplace)}</span>
+              </div>
+            </div>
+
+            <!-- 刪除管理按鈕 -->
+            <button type="button" data-delete-id="${item.id}" data-delete-name="${escapeHTML(item.name)}"
+              aria-label="移除名單"
+              class="delete-btn text-cocoaLight/50 hover:text-red-400 p-1.5 rounded-lg hover:bg-cream transition shrink-0">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          ${item.note ? `
+            <div class="bg-cream/80 rounded-xl p-3 text-xs sm:text-sm text-cocoa leading-relaxed mb-3.5 border border-[#F2EAE1]">
+              ${escapeHTML(item.note)}
+            </div>
+          ` : '<div class="mb-3"></div>'}
+
+          <!-- 卡片底部：發起人與同心禱告按鈕 -->
+          <div class="flex items-center justify-between pt-2 border-t border-[#F5EDE4] gap-2">
+            <div class="text-[11px] text-cocoaLight flex items-center gap-1.5 truncate">
+              <span class="w-5 h-5 rounded-full bg-golden/25 text-[#B5781E] flex items-center justify-center font-bold text-[10px] shrink-0">
+                ${escapeHTML((item.submittedBy || '家').charAt(0))}
+              </span>
+              <span class="truncate">由 <strong class="font-medium text-cocoa">${escapeHTML(item.submittedBy || '愛心家人')}</strong> 發起</span>
+            </div>
+
+            <button type="button" data-pray-id="${item.id}"
+              class="pray-btn shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition active:scale-95 ${
+                hasPrayed
+                  ? 'bg-sage text-white shadow-warmSm'
+                  : 'bg-sageLight hover:bg-sage text-sage hover:text-white'
+              }">
+              <i data-lucide="heart" class="w-3.5 h-3.5 ${hasPrayed ? 'fill-current' : ''}"></i>
+              <span>${hasPrayed ? '已同心禱告' : '阿們・為他禱告'}</span>
+              <span class="ml-0.5 px-1.5 py-0.5 rounded-md text-[11px] ${
+                hasPrayed ? 'bg-white/20 text-white' : 'bg-white text-sage'
+              }">${count}</span>
+            </button>
+          </div>
+        `;
+
+        prayerListContainer.appendChild(card);
+      });
+
+      lucide.createIcons({ root: prayerListContainer });
+      bindCardEvents();
+    }
+
+    // 綁定卡片上的互動按鈕事件
+    function bindCardEvents() {
+      // 1. 按下「阿們・為他禱告」
+      document.querySelectorAll('.pray-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.getAttribute('data-pray-id');
+          if (!id) return;
+
+          if (prayedSessionSet.has(id)) {
+            showToast('你已經為這位同事獻上禱告囉，願神紀念你的愛心！');
+            return;
+          }
+
+          prayedSessionSet.add(id);
+          btn.classList.add('animate-pray');
+
+          // 樂觀更新 UI
+          const target = allPrayers.find(p => p.id === id);
+          if (target) {
+            target.prayerCount = (Number(target.prayerCount) || 0) + 1;
+            updateStatsAndTags();
+            renderPrayerCards();
+          }
+
+          showToast(`阿們！已與大家同心為「${target?.name || '同事'}」禱告 🙏`);
+
+          // 寫入 Firestore
+          if (db && currentUser && !id.startsWith('demo-')) {
+            try {
+              const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'colleague_prayers', id);
+              await updateDoc(docRef, {
+                prayerCount: increment(1)
+              });
+            } catch (err) {
+              console.error('Failed to increment prayer count:', err);
+            }
+          }
+        });
+      });
+
+      // 2. 開啟刪除確認對話框
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          itemToDeleteId = btn.getAttribute('data-delete-id');
+          const name = btn.getAttribute('data-delete-name');
+          document.getElementById('deleteModalDesc').textContent =
+            `確定要將「${name}」從代禱牆移除嗎？若他已經決志信主，歡迎先在 LINE 群組報好消息喔！`;
+          const modal = document.getElementById('deleteModal');
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      });
+    }
+
+    // 表單送出：新增代禱同事
+    addPrayerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById('colleagueName');
+      const workplaceInput = document.getElementById('workplace');
+      const noteInput = document.getElementById('prayerNote');
+      const submittedByInput = document.getElementById('submittedBy');
+      const submitBtn = document.getElementById('submitBtn');
+
+      const name = nameInput.value.trim();
+      const workplace = workplaceInput.value.trim();
+      const note = noteInput.value.trim();
+      const submittedBy = submittedByInput.value.trim() || '愛心家人';
+
+      if (!name || !workplace) {
+        showToast('請填寫同事姓名與工作地點喔！', 'info');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>正在加入代禱牆...</span>`;
+
+      const newEntry = {
+        name,
+        workplace,
+        note,
+        submittedBy,
+        prayerCount: 1, // 發起人自動算第一個禱告
+        createdAt: serverTimestamp(),
+        localTime: Date.now()
+      };
+
+      try {
+        if (db && currentUser) {
+          const prayersRef = collection(db, 'artifacts', appId, 'public', 'data', 'colleague_prayers');
+          const docRef = await addDoc(prayersRef, newEntry);
+          prayedSessionSet.add(docRef.id);
+        } else {
+          const demoId = 'demo-' + Date.now();
+          prayedSessionSet.add(demoId);
+          allPrayers.unshift({ id: demoId, ...newEntry });
+          updateStatsAndTags();
+          renderPrayerCards();
+        }
+
+        // 清空欄位（保留發起人名字方便連續新增）
+        nameInput.value = '';
+        workplaceInput.value = '';
+        noteInput.value = '';
+        selectedLocationFilter = '全部';
+
+        showToast(`已將「${name}」加入代禱名單，一起同心守望！`);
+      } catch (err) {
+        console.error('Add prayer error:', err);
+        showToast('新增時發生一點小狀況，請再試一次', 'info');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<i data-lucide="plus-circle" class="w-4 h-4"></i><span>加入代禱名單</span>`;
+        lucide.createIcons({ root: submitBtn });
+      }
+    });
+
+    // 收合/展開新增表單
+    const toggleFormBtn = document.getElementById('toggleFormBtn');
+    const toggleFormText = document.getElementById('toggleFormText');
+    const toggleFormIcon = document.getElementById('toggleFormIcon');
+    let isFormOpen = true;
+
+    toggleFormBtn.addEventListener('click', () => {
+      isFormOpen = !isFormOpen;
+      if (isFormOpen) {
+        addPrayerForm.classList.remove('hidden');
+        toggleFormText.textContent = '收合表單';
+        toggleFormIcon.setAttribute('data-lucide', 'chevron-up');
+      } else {
+        addPrayerForm.classList.add('hidden');
+        toggleFormText.textContent = '展開新增';
+        toggleFormIcon.setAttribute('data-lucide', 'chevron-down');
+      }
+      lucide.createIcons({ root: toggleFormBtn });
+    });
+
+    // 搜尋輸入事件
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      clearSearchBtn.classList.toggle('hidden', !searchQuery);
+      renderPrayerCards();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      renderPrayerCards();
+    });
+
+    // 刪除 Modal 控制
+    const deleteModal = document.getElementById('deleteModal');
+    document.getElementById('cancelDeleteBtn').addEventListener('click', () => {
+      itemToDeleteId = null;
+      deleteModal.classList.add('hidden');
+      deleteModal.classList.remove('flex');
+    });
+
+    document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
+      if (!itemToDeleteId) return;
+      const targetId = itemToDeleteId;
+      deleteModal.classList.add('hidden');
+      deleteModal.classList.remove('flex');
+
+      try {
+        if (db && currentUser && !targetId.startsWith('demo-')) {
+          await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'colleague_prayers', targetId));
+        } else {
+          allPrayers = allPrayers.filter(p => p.id !== targetId);
+          updateStatsAndTags();
+          renderPrayerCards();
+        }
+        showToast('已從代禱名單移除');
+      } catch (err) {
+        console.error('Delete error:', err);
+        showToast('移除失敗，請稍後再試', 'info');
+      }
+      itemToDeleteId = null;
+    });
+
+    // 複製 LINE 邀請訊息（使用相容 iFrame 與手機瀏覽器的 execCommand 備援）
+    document.getElementById('shareLineBtn').addEventListener('click', () => {
+      const currentUrl = window.location.href;
+      const countColleagues = allPrayers.length;
+      const countPrayers = allPrayers.reduce((acc, item) => acc + (Number(item.prayerCount) || 0), 0);
+
+      const inviteText =
+`🏡【為同事得救禱告｜職場福音守望牆】
+同心守望，把家人的愛帶進職場 ❤️
+
+目前已有 ${countColleagues} 位同事在代禱名單中，大家累計同心禱告了 ${countPrayers} 次！
+歡迎點開下方連結，寫下你想為哪位同事禱告（記得註明工作地點），也一起為名單上的同事按「阿們」守望喔 🙏✨
+
+👉 點此開啟代禱名單：
+${currentUrl}`;
+
+      const textArea = document.createElement('textarea');
+      textArea.value = inviteText;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        document.execCommand('copy');
+        showToast('已複製 LINE 邀請訊息！快去群組貼上分享吧 💬');
+      } catch (err) {
+        showToast('複製失敗，請直接複製網址分享給大家', 'info');
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    });
+
+    // 底部懸浮按鈕：捲動回頂部並聚焦姓名輸入框
+    document.getElementById('scrollToTopBtn').addEventListener('click', () => {
+      if (!isFormOpen) {
+        toggleFormBtn.click();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('colleagueName').focus();
+      }, 450);
+    });
+
+    // 啟動應用程式
+    window.addEventListener('DOMContentLoaded', () => {
+      renderEncouragementVerse(0);
+      initFirebase();
+    });
+  </script>
+</body>
+</html>
